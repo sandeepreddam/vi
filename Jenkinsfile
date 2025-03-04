@@ -22,7 +22,7 @@ pipeline
       {
           steps
           {
-              sh ' /var/lib/jenkins/workspace/javawar/pom.xml && mvn tomcat7:deploy'
+              sh 'mvn tomcat7:deploy'
           }
       }
             
