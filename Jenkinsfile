@@ -11,6 +11,20 @@ pipeline
               }
               
             }
+      stage('2')
+            {
+                steps
+                {
+                    sh 'export MAVEN_HOME=/opt/apache-maven-3.9.8 && export PATH=$PATH:/opt/apache-maven-3.9.8/bin && mvn -f /var/lib/jenkins/workspace/two/javawar/pom.xml install'
+                }
+            }
+      stage('3')
+      {
+          steps
+          {
+              sh 'mvn tomcat7:deploy'
+          }
+      }
             
   }
   
