@@ -15,14 +15,14 @@ pipeline
             {
                 steps
                 {
-                    sh 'export MAVEN_HOME=/opt/apache-maven-3.9.8 && export PATH=$PATH:/opt/apache-maven-3.9.8/bin && mvn -f /var/lib/jenkins/workspace/two/javawar/pom.xml install'
+                    sh 'export MAVEN_HOME=/opt/apache-maven-3.9.8 && export PATH=$PATH:/opt/apache-maven-3.9.8/bin && mvn -f /var/lib/jenkins/workspace/two/javawar/pom.xml clean'
                 }
             }
       stage('3')
       {
           steps
           {
-              sh 'mvn tomcat7:deploy'
+              sh ' /var/lib/jenkins/workspace/javawar/pom.xml && mvn tomcat7:deploy'
           }
       }
             
